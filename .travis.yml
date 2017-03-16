@@ -1,11 +1,14 @@
 language: java
 
 install: true
-  
-addons:
-  apt:
-    packages:
-    - oracle-java6-installer
+
+jdk:
+  - openjdk6
+
+#addons:
+#  apt:
+#    packages:
+#    - oracle-java6-installer
   
 before_cache:
   - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
