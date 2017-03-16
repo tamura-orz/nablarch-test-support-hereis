@@ -3,7 +3,12 @@ language: java
 install: true
 
 jdk:
-  - openjdk6
+  - oraclejdk6
+  
+addons:
+  apt:
+    packages:
+    - oracle-java6-installer
   
 before_cache:
   - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
@@ -14,6 +19,8 @@ cache:
     - $HOME/.gradle/wrapper/
 
 before_install:
+  - echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+  - java -version
   - chmod +x gradlew
 
 script:
