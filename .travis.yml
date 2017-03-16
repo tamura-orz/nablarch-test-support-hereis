@@ -27,4 +27,4 @@ before_script:
   - chmod +x gradlew
 
 script:
-  - ./gradlew build --no-daemon
+  - ./gradlew uploadArchives -PnablarchRepoUsername=nablarch -PnablarchRepoPassword=${DEPLOY_PASSWORD} -PnablarchRepoDeployUrl=http://ec2-52-220-174-87.ap-southeast-1.compute.amazonaws.com/artifactory/example-repo-local/ --no-daemon
