@@ -19,6 +19,7 @@ cache:
     - $HOME/.gradle/wrapper/
 
 before_script:
+  - rm -rf $HOME/.gradle/
   - echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
 #  - sudo update-java-alternatives -s java-6-oracle
   - java -version
