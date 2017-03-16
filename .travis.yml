@@ -1,9 +1,6 @@
 language: java
 
 install: true
-
-jdk:
-  - oraclejdk6
   
 addons:
   apt:
