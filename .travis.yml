@@ -15,8 +15,9 @@ cache:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
 
-before_install:
+before_script:
   - echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+  - update-java-alternatives -s java-6-oracle
   - java -version
   - chmod +x gradlew
 
