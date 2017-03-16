@@ -20,6 +20,7 @@ cache:
 
 before_script:
   - rm -rf $HOME/.gradle/
+  - sudo ls
   - echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
 #  - sudo update-java-alternatives -s java-6-oracle
   - java -version
