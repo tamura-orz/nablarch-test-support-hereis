@@ -13,8 +13,8 @@ cache:
 
 before_script:
   - chmod +x gradlew
-  - "curl -H 'Cache-Control: no-cache' -s https://raw.githubusercontent.com/tamura-orz/travisci-tools/master/common/travis.sh | /bin/bash"
-  - echo ${REPO_USER}
 
 script:
+  - "curl -H 'Cache-Control: no-cache' -s https://raw.githubusercontent.com/tamura-orz/travisci-tools/master/common/travis.sh | /bin/bash"
+  - echo ${REPO_USER}
 ##  - ./gradlew uploadArchives -PnablarchRepoUsername=nablarch -PnablarchRepoPassword=${DEPLOY_PASSWORD} -PnablarchRepoDeployUrl=http://ec2-52-220-174-87.ap-southeast-1.compute.amazonaws.com/artifactory/example-repo-local/ --no-daemon
