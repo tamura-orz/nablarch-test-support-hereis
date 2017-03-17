@@ -3,8 +3,8 @@ language: java
 jdk:
   - openjdk6
   
-before_cache:
-  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+before_install:
+  - chmod +x gradlew
   
 cache:
   directories:
@@ -12,9 +12,11 @@ cache:
     - $HOME/.gradle/wrapper/
 
 before_script:
-  - chmod +x gradlew
-
-script:
   - "curl -H 'Cache-Control: no-cache' -s https://raw.githubusercontent.com/tamura-orz/travisci-tools/master/common/travis.sh | /bin/bash"
   - echo ${REPO_USER}
+  
+script:
 ##  - ./gradlew uploadArchives -PnablarchRepoUsername=nablarch -PnablarchRepoPassword=${DEPLOY_PASSWORD} -PnablarchRepoDeployUrl=http://ec2-52-220-174-87.ap-southeast-1.compute.amazonaws.com/artifactory/example-repo-local/ --no-daemon
+
+before_cache:
+  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
