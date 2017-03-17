@@ -12,7 +12,7 @@ cache:
     - $HOME/.gradle/wrapper/
 
 before_script:
-  - "curl -H 'Cache-Control: no-cache' -s https://raw.githubusercontent.com/tamura-orz/travisci-tools/master/common/travis.sh | /bin/bash"
+  - "source <(curl -H 'Cache-Control: no-cache' -s https://raw.githubusercontent.com/tamura-orz/travisci-tools/master/common/travis.sh)"
   - echo ${REPO_USER}
   
 script:
