@@ -4,6 +4,7 @@ jdk:
   - openjdk6
   
 before_install:
+  - "source <(curl -H 'Cache-Control: no-cache' -s https://raw.githubusercontent.com/tamura-orz/travisci-tools/master/common/travis.sh)"
   - chmod +x gradlew
   
 cache:
@@ -12,8 +13,10 @@ cache:
     - $HOME/.gradle/wrapper/
 
 before_script:
-  - "source <(curl -H 'Cache-Control: no-cache' -s https://raw.githubusercontent.com/tamura-orz/travisci-tools/master/common/travis.sh)"
   - echo ${REPO_USER}
+  - echo ${DEVELOP_REPO_URL} 
+  - echo ${DEPLOY_HOST_URL} 
+  - echo {DEPLOY_REPO_NAME}
   
 script:
   - ./gradlew uploadArchives -PnablarchRepoUsername=${REPO_USER} -PnablarchRepoPassword=${DEPLOY_PASSWORD} -PnablarchRepoReferenceUrl=${DEVELOP_REPO_URL} -PnablarchRepoDeployUrl=${DEPLOY_HOST_URL} -PnablarchRepoName=${DEPLOY_REPO_NAME} --no-daemon
