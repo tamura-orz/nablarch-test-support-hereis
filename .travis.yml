@@ -16,7 +16,7 @@ before_script:
   - echo ${REPO_USER}
   
 script:
-##  - ./gradlew uploadArchives -PnablarchRepoUsername=nablarch -PnablarchRepoPassword=${DEPLOY_PASSWORD} -PnablarchRepoDeployUrl=http://ec2-52-220-174-87.ap-southeast-1.compute.amazonaws.com/artifactory/example-repo-local/ --no-daemon
+  - ./gradlew uploadArchives -PnablarchRepoUsername=${REPO_USER} -PnablarchRepoPassword=${DEPLOY_PASSWORD} -PnablarchRepoReferenceUrl=${DEVELOP_REPO_URL} -PnablarchRepoDeployUrl=${DEPLOY_HOST_URL} -PnablarchRepoName=${DEPLOY_REPO_NAME} --no-daemon
 
 before_cache:
   - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
